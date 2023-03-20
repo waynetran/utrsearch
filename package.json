@@ -1,5 +1,5 @@
 {
-  "name": "utr",
+  "name": "utrsearch",
   "version": "1.0.0",
   "description": "Find UTR numbers from csv file of player names",
   "main": "index.js",
