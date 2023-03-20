@@ -1,0 +1,16 @@
+{
+  "name": "utr",
+  "version": "1.0.0",
+  "description": "Find UTR numbers from csv file of player names",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "csv-parser": "^3.0.0",
+    "node-fetch": "^3.3.1"
+  }
+}
