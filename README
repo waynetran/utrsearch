@@ -1,7 +1,18 @@
 # UTR Search
 ## Retrieve UTR information for a list of players from an ITF tournament csv.
 
-Example: 
+### Installation and Running
+Download and Install https://nodejs.org/en/download
+Download this repository using git clone or "Download Zip" from the "Code" menu and extract contents.
+
+In a command prompt:
+```
+cd utrsearch_main
+npm install
+node index.js test1.csv (or the PATH to your csv)
+```
+
+### Example: 
 ```
 node index.js test1.csv
 
