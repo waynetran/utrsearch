@@ -1,6 +1,6 @@
-import fs from 'fs';
-import csv from 'csv-parser';
-import fetch from 'node-fetch';
+const fs = require('fs');
+const csv = require('csv-parser');
+const fetch = require('node-fetch');
 
 var UTR_URL = "https://app.universaltennis.com";
 var PLAYER_URL_PATH = "/api/v2/search/players";
