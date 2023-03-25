@@ -40,12 +40,12 @@ async function processCSV(file) {
       var name = splitString.join(' ');
       
       var url = UTR_URL + PLAYER_URL_PATH + "?query="+ encodeURIComponent(name) + "&results=1";
-      //console.log("url: ", url);
-      const response = await fetch(url);
-      const data = await response.json();
-      var playerResult = {}
-
+      var data = {};
       try {
+        const response = await fetch(url);
+        data = await response.json();
+        var playerResult = {}
+
         var playerSource = data.hits[0].source
         if(playerSource.singlesUtr == 0){
           continue;
@@ -63,7 +63,8 @@ async function processCSV(file) {
         doublesTotal += playerSource.doublesUtr;
 
       }catch(e){
-        //console.error(e);
+        console.error(`Error geting UTR info for player ${name}`);
+        console.error("UTR url: ", url);
       }
     }
 
