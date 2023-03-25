@@ -1,9 +1,8 @@
 {
   "name": "utrsearch",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Find UTR numbers from csv file of player names",
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,6 +10,16 @@
   "license": "ISC",
   "dependencies": {
     "csv-parser": "^3.0.0",
-    "node-fetch": "^3.3.1"
-  }
+    "node-fetch": "^2.6.9"
+  },
+  "pkg": {
+    "assets": [
+      "node_modules/**/*"
+    ],
+    "output": "dist",
+    "targets": [
+      "x86"
+    ]
+  },
+  "bin": "index.js"
 }
