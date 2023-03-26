@@ -37,9 +37,9 @@ async function processCSV(file) {
         continue;
       }
 
-      var name = splitString.join(' ');
-      
+      var name = splitString.join(' ');      
       var url = UTR_URL + PLAYER_URL_PATH + "?query="+ encodeURIComponent(name) + "&results=1";
+      console.log(url);
       var data = {};
       try {
         const response = await fetch(url);
@@ -48,10 +48,10 @@ async function processCSV(file) {
 
         var playerSource = data.hits[0].source
         if(playerSource.singlesUtr == 0){
+          console.log("Player UTR is 0 for " + name +", skipping...");
           continue;
         }
 
-        //console.log("Response: ", playerSource);
         playerResult["Name"] = playerSource.displayName;
         playerResult["Singles UTR"] = playerSource.singlesUtr;
         playerResult["3 Month Rating"] = playerSource.threeMonthRating;
@@ -64,7 +64,6 @@ async function processCSV(file) {
 
       }catch(e){
         console.error(`Error geting UTR info for player ${name}`);
-        console.error("UTR url: ", url);
       }
     }
 
